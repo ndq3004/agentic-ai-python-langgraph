@@ -83,8 +83,9 @@ if ($hasNvidia) {
     Write-Host "[OK] PyTorch installed" -ForegroundColor Green
 } else {
     Write-Host ""
-    Write-Host "[SKIP] PyTorch with CUDA not installed (no GPU detected)" -ForegroundColor Yellow
-    Write-Host "      Install NVIDIA drivers, then run this script again" -ForegroundColor Yellow
+    Write-Host "[INFO] No NVIDIA GPU detected. Installing CPU-only PyTorch..." -ForegroundColor Cyan
+    pip install torch torchvision torchaudio
+    Write-Host "[OK] CPU-only PyTorch installed" -ForegroundColor Green
 }
 
 # Create/update .env

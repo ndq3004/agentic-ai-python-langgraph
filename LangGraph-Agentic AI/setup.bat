@@ -85,8 +85,9 @@ if not "%SKIP_GPU_CHECK%"=="1" (
     echo [OK] PyTorch installed
 ) else (
     echo.
-    echo [SKIP] Skipped PyTorch installation due to missing NVIDIA drivers.
-    echo        Install drivers and run again, or set VIDEO_BACKEND=stub in .env
+    echo [INFO] No NVIDIA GPU detected. Installing CPU-only PyTorch...
+    pip install torch torchvision torchaudio
+    echo [OK] CPU-only PyTorch installed
 )
 
 REM Check if .env exists, create if not
