@@ -209,3 +209,6 @@ __marimo__/
 
 *.mp3
 *.json
+*.txt
+*.mp4
+!requirements.txt

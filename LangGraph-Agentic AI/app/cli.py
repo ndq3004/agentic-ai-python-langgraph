@@ -5,9 +5,14 @@ import json
 from datetime import datetime
 from pathlib import Path
 
+from dotenv import load_dotenv
+
 from app.graphs.production_graph import build_production_graph
 from app.graphs.script_graph import build_script_graph
 from app.schemas.state import build_initial_script_state
+
+# Load environment variables from .env file
+load_dotenv()
 
 
 def _ensure_data_dirs() -> None:

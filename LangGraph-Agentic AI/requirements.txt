@@ -5,10 +5,12 @@ python-dotenv>=1.0.1
 # TTS
 gtts>=2.5.0
 # Video assembly
-moviespy>=2.0.0
+moviepy>=2.0.0
+# replicate api
+replicate>=0.9.0
 # Video generation (Wan2.1)
-torch>=2.6.0
-diffusers>=0.32.0
-transformers>=4.50.0
-accelerate>=1.3.0
+# torch>=2.6.0
+# diffusers>=0.32.0
+# transformers>=4.50.0
+# accelerate>=1.3.0
 

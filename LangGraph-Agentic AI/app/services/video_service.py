@@ -3,6 +3,10 @@ from __future__ import annotations
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+# Load .env before reading VIDEO_BACKEND
+load_dotenv()
 
 # ---------------------------------------------------------------------------
 # Backend selection
@@ -13,6 +17,7 @@ from pathlib import Path
 #   stub     — No real video; creates empty placeholder file (default)
 # ---------------------------------------------------------------------------
 VIDEO_BACKEND = os.getenv("VIDEO_BACKEND", "stub")
+REPLICATE_MODEL = os.getenv("REPLICATE_MODEL", "minimax/video-01")
 
 
 class VideoService:
@@ -91,7 +96,7 @@ def _generate_replicate(prompt: str, output_file: str) -> str:
     Path(output_file).parent.mkdir(parents=True, exist_ok=True)
 
     output = replicate.run(
-        "wavespeedai/wan-2.1-t2v-480p",
+        REPLICATE_MODEL,
         input={
             "prompt": prompt,
             "num_frames": 49,
